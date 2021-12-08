@@ -16,31 +16,25 @@
             width: 100%;
             background-color: rgb(8, 88, 28);
             color: white;
-            text-align: left;
+            text-align: center;
         }
 
         body {
-            background-color: #56ff34;
+            background-color: #60ff40;
 
         }
 
-        .container {
+        div.container {
             font-family: arial;
-            font-size: 30px;
-            margin: 60px;
-            width: 800px;
-            height: 300px;
+            font-size: 35px;
+            margin: 100px;
+            width: 400px;
+            height: 500px;
             /* Center vertically and horizontally */
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
-        .child {
-            width: 50px;
-            height: 50px;
-        }
-
         .a {
             display: inline-block;
         }
@@ -54,7 +48,7 @@
     <div class="top-bar">
         <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
-                <li class="menu-text">Suitable Tools</li>
+                <li class="menu-text"><a href="/home/">Suitable Tools</a></li>
                 {% if request.user.is_authenticated %}
                 <li><a href="/logout/">Logout</a></li>
                 {% else %}
@@ -74,28 +68,16 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="child">
-            <ul class="dropdown menu" data-dropdown-menu>
-                <li><a href="/sale/" style="color:red">SALE</a>
-                    <a class="thumbnail" href="/sale/"><img
-                            src="https://lh3.googleusercontent.com/A7Iywozepo4L6hubV9IkW7HpVlvaV91F6CaIRqn47A9o2CCNK2hSzmPB8j4IcA6IuoTlUaSOgw2BICZxioOOO5xKB6JHvXHIwd876ule7WZxQzh0udx8KDxvhCllaNeuL-uemH8rkw=w600-h315-p-k"
-                            alt="Used Tools" />
-                    </a>
-                    <a href="/new/" style="color:red">NEW TOOLS</a>
-                    <a class="thumbnail" href="/sale/"><img
-                            src="https://lh3.googleusercontent.com/A7Iywozepo4L6hubV9IkW7HpVlvaV91F6CaIRqn47A9o2CCNK2hSzmPB8j4IcA6IuoTlUaSOgw2BICZxioOOO5xKB6JHvXHIwd876ule7WZxQzh0udx8KDxvhCllaNeuL-uemH8rkw=w600-h315-p-k"
-                            alt="Used Tools" />
-                    </a>
-                </li>
-            </ul>
+   
 
-        </div>
-    </div>
-
+ 
 
     <div class="footer">
         <p>CONTACT US (661) 941 - 8523</p>
         <p>ESQUEDAMYRIAM@GMAIL.COM</p>
 
     </div>
+
+
+    {% block content %}
+    {% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import logout
 from . import forms
@@ -33,15 +33,23 @@ def logout_view(request):
     return redirect("/login/")
 
 def sale_view(request):
-    title = " Discounted Prices for Used Tools"
+    title = " Discounted Prices for Used Tools - starting at $2 each item"
     context = {
         "title" : title
     }
-    return redirect("/")
+    print("inside the sale_view function")
+    return render(request,"sale.html", context=context)
 
 def new_view(request):
     title = " New Tools - starting at $5 each item"
     context = {
         "title" : title
     }
-    return redirect("/")
+    return render(request,"new.html", context=context)
+
+def home_view(request):
+    title = "Suitable Tools"
+    context = {
+        "title" : title
+    }
+    return render(request,"home.html", context=context)
