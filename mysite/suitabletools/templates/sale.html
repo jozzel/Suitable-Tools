@@ -3,15 +3,79 @@
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
 
-<ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-</ul>
-{% endblock %}
+<h1>
+    <center>Used Tools</center>
+</h1>
+
+<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+    <a class="thumbnail"
+
+         href="https://lh3.googleusercontent.com/qa4GAf5VflwCInFyxAnlud_avcBkcBDPTfilEuSWpQVIj5fyymR69mrxthhJe-EWrvNWm0awKU-Az88QxyPDu9FG26iypVEgqqagjhqVqq8HCYw387dJqz6fwXnooMjwc2AiEb-fdA=w2400?source=screenshot.guru"> 
+        <img src="https://lh3.googleusercontent.com/qa4GAf5VflwCInFyxAnlud_avcBkcBDPTfilEuSWpQVIj5fyymR69mrxthhJe-EWrvNWm0awKU-Az88QxyPDu9FG26iypVEgqqagjhqVqq8HCYw387dJqz6fwXnooMjwc2AiEb-fdA=w277-h162-p-k"
+            width="300" height="300" />
+        <center>
+            <h4 style="color:black">$15</h4>
+        </center>
+        
+
+     
+    </a>
+    {% for c in comments %}
+
+    {{c}}
+
+{% endfor %}
+    <form method = "post">
+        {% csrf_token %}
+
+        <form action="/team_name_url/" method="post">
+            <label for="team_name">Enter price: </label>
+            <input id="team_name" type="text" name="name_field">
+            <input type="submit" value="Comment">
+        </form>
+        
+
+        <button type = "submit">Comment</button>
+
+
+    </form>
+
+
+
+
+    <a class="thumbnail"
+        href="https://lh3.googleusercontent.com/d-7JhZM4bWV5teqH8boeEqU-M7RQUNKKJE-1gfb_-oE2e6849gYGMV2x6gj8MZfSkRN9rJQFIFyNZYx5F4f04GYijLj7GPZGVh-274pn4pFkA4amKqBvEVpS2VKnQfpoCT1-mB70rA=w2400?source=screenshot.guru">
+        <img src="https://lh3.googleusercontent.com/d-7JhZM4bWV5teqH8boeEqU-M7RQUNKKJE-1gfb_-oE2e6849gYGMV2x6gj8MZfSkRN9rJQFIFyNZYx5F4f04GYijLj7GPZGVh-274pn4pFkA4amKqBvEVpS2VKnQfpoCT1-mB70rA=w265-h187-p-k"
+            width="300" height="300" />
+        <center>
+            <h4 style="color:black">$30</h4>
+        </center>
+    </a>
+
+    <a class="thumbnail"
+        href="https://lh3.googleusercontent.com/fpnw_Xq065OHaY1y6t4uovDYvrcO2uhemItzpahbtfI42U7GmN9VU0FjxbY3CLCroqBPjywlyNzcwniy2IH0U1hRguk0SJq1C5s0zQgQGwLJuI4PjHXUnIJbQqeEI8pQaONw4NLuEw=w2400?source=screenshot.guru">
+        <img src="https://lh3.googleusercontent.com/fpnw_Xq065OHaY1y6t4uovDYvrcO2uhemItzpahbtfI42U7GmN9VU0FjxbY3CLCroqBPjywlyNzcwniy2IH0U1hRguk0SJq1C5s0zQgQGwLJuI4PjHXUnIJbQqeEI8pQaONw4NLuEw=w195-h207-p-k"
+            width="300" height="300" />
+        <center>
+            <h4 style="color:black">$10</h4>
+        </center>
+    </a>
+
+    <a class="thumbnail"
+        href="https://lh3.googleusercontent.com/6J-EC-04KXaCbYvZOcgTgjSum6Qi_FoLeNOqJBiXMTndp8LvGPg0bHg9xsfcAfMaPbFrxSbc6VLDAGO4PzVh-2FaW-L-apFmnmigY8w5PY7UBxGawdZvn2q-clFMAYygqyUhkXrTtQ=w2400?source=screenshot.guru">
+        <img src="https://lh3.googleusercontent.com/6J-EC-04KXaCbYvZOcgTgjSum6Qi_FoLeNOqJBiXMTndp8LvGPg0bHg9xsfcAfMaPbFrxSbc6VLDAGO4PzVh-2FaW-L-apFmnmigY8w5PY7UBxGawdZvn2q-clFMAYygqyUhkXrTtQ=w187-h242-p-k"
+            width="300" height="300" />
+        <center>
+            <h4 style="color:black">$35</h4>
+        </center>
+    </a>
+    <a class="thumbnail"
+        href="https://lh3.googleusercontent.com/iJbOPFReAU450sLSFqJILWyL6QNWFeV87ygIG1EuXmYrxSWIwNj_Z2TMP-CUxClkTOLsDF1jmJKvPWrx4vJqQpcXcUfTbOx7mxU3zuc8pPOibcSWYQTBNWJMzjaGVfVjLya2zrAWTw=w2400?source=screenshot.guru">
+        <img src="https://lh3.googleusercontent.com/iJbOPFReAU450sLSFqJILWyL6QNWFeV87ygIG1EuXmYrxSWIwNj_Z2TMP-CUxClkTOLsDF1jmJKvPWrx4vJqQpcXcUfTbOx7mxU3zuc8pPOibcSWYQTBNWJMzjaGVfVjLya2zrAWTw=w262-h196-p-k"
+            width="300" height="300" />
+        <center>
+            <h4 style="color:black">$20</h4>
+        </center>
+    </a>
+
+    {% endblock %}

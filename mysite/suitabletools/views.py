@@ -2,16 +2,47 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import logout
 from . import forms
+from . import models
 
 
 # Create your views here.
 
-def index(request):
+def default(request):
     title = "Home Page"
     context = {
         "title" : title
     }
-    return render(request, "index.html", context=context)
+    return render(request, "default.html", context=context)
+
+def comment_view(request):
+   
+   comments = models.CommentModel.objects.all()
+
+   if request.method == "POST":
+        form = forms.CommentForm(request.POST)
+        if form.is_valid() and request.user.is_authenticated:
+            form.save(request)
+            
+
+            context = {
+            "title": "Comment",
+            "form": form,
+            "comments":comments
+            }
+
+            #return redirect("/")
+            return render(request,"sale.html", context=context)
+        
+        
+        else:
+            form = forms.CommentForm()
+        context = {
+            "title": "Comment",
+            "form": form,
+            "comment":comments
+            }
+        return render(request,"sale.html", context=context)
+
 
 def register_view(request):
         if request.method == "POST":
@@ -47,9 +78,26 @@ def new_view(request):
     }
     return render(request,"new.html", context=context)
 
+def contact_view(request):
+    title = " Contact Us"
+    context = {
+        "title" : title
+    }
+    return render(request,"contact.html", context=context)
+
 def home_view(request):
     title = "Suitable Tools"
     context = {
         "title" : title
     }
     return render(request,"home.html", context=context)
+
+def index(request):
+    return render(request, 'index.html')
+
+def room(request, room_name):
+#def room(request, room_name, username):
+    return render(request, 'room.html', {
+        'room_name': room_name,
+       # 'username': username
+    })

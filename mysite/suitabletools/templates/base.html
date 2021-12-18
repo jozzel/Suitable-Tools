@@ -38,6 +38,14 @@
         .a {
             display: inline-block;
         }
+        .contactus {
+            background-color: white;
+            min-height: 10em;
+            vertical-align: middle;
+            height: 10em;
+            position: relative;
+
+        }
     </style>
 
 </head>
@@ -49,11 +57,13 @@
         <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
                 <li class="menu-text"><a href="/home/">Suitable Tools</a></li>
+                <li class="menu-text"><a href="/contact/">Contact Us</a></li>
                 {% if request.user.is_authenticated %}
-                <li><a href="/logout/">Logout</a></li>
+                <li class="menu-text"><a href="/logout/">Logout</a></li>
+                <li class="menu-text"><a href="/chat/">Chat</a></li>
                 {% else %}
-                <li><a href="/login/">Login</a></li>
-                <li><a href="/register/">Sign Up</a></li>
+                <li class="menu-text"><a href="/login/">Login</a></li>
+                <li class="menu-text"><a href="/register/">Sign Up</a></li>
                 {% endif %}
             </ul>
         </div>

@@ -6,6 +6,7 @@ from django.contrib.auth.models import User as auth_user
 
 from . import models
 
+
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(
         label="Email",
@@ -27,3 +28,18 @@ class RegistrationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+class CommentForm(forms.Form):
+    comment_field = forms.CharField(
+        label='Comment',
+        max_length=240,
+        # validators=[validate_unicode_slug, must_be_caps, must_be_bob]
+        )
+
+    def save(self, request):
+        comment_instance = models.CommentModel()
+        comment_instance.comment = self.cleaned_data["comment_field"]
+        comment_instance.author = request.user
+        comment_instance.save()
+        return comment_instance
